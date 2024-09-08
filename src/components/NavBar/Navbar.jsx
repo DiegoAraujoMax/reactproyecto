@@ -12,34 +12,25 @@ import {
   Stack,
   useColorMode,
   Center,
+  Link,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import Tonel from "../../assets/img/tonel.png";
-import CardWidget from "../CartWidget/Cartwidget";
-import FotoPerfil from "../../assets/img/perfil.jpg"
-const Navbar = () => {
+import { CartWidget } from "../CartWidget";
+import FotoPerfil from "../../assets/img/perfil.jpg";
+
+
+export const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Flex alignItems="center">
-            Bodegas Araujo
-            <Flex
-              maxW="30px"
-              mx="auto"
-              ml={2}
-              bg= "white"
-              borderRadius= "full"
-              objectFit='cover'
-            >
-             <img src={Tonel} alt="Logo de Bodegas Araujo" />
-            </Flex>
-          </Flex>
-
+          <Box>
+            <Link>Chiringuito</Link>
+          </Box>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
-              <CardWidget />
+              <CartWidget />
               <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
@@ -52,18 +43,12 @@ const Navbar = () => {
                   cursor={"pointer"}
                   minW={0}
                 >
-                  <Avatar
-                    size={"sm"}
-                    src={FotoPerfil}
-                  />
+                  <Avatar size={"sm"} src={FotoPerfil} />
                 </MenuButton>
                 <MenuList alignItems={"center"}>
                   <br />
                   <Center>
-                    <Avatar
-                      size={"2xl"}
-                      src={FotoPerfil}
-                    />
+                    <Avatar size={"2xl"} src={FotoPerfil} />
                   </Center>
                   <br />
                   <Center>
@@ -83,5 +68,3 @@ const Navbar = () => {
     </>
   );
 };
-
-export default Navbar;

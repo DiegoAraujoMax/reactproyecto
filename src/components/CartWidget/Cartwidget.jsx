@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { HiShoppingCart } from "react-icons/hi2";
 
-const CardWidget = () => {
+export const CartWidget = () => {
   return (
     <Flex alignItems={"center"} justifyContent={"center"}>
       <HiShoppingCart size= {25} />
@@ -9,5 +9,3 @@ const CardWidget = () => {
     </Flex>
   );
 };
-
-export default CardWidget;
