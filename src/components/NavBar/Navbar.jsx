@@ -12,22 +12,37 @@ import {
   Stack,
   useColorMode,
   Center,
-  Link,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { CartWidget } from "../CartWidget";
+import { Link } from "react-router-dom";
 import FotoPerfil from "../../assets/img/perfil.jpg";
+import { useCategory } from '../../Hooks';
+
 
 
 export const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const {category} = useCategory();
+
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            <Link>Chiringuito</Link>
+          <Link to="/">MultiStore</Link>
           </Box>
+          <Menu>
+              <MenuButton as={Link} cursor="pointer" style={{marginLeft: 30}}>
+                Categorias
+              </MenuButton>
+              <MenuList height={'300px'} overflowY={'scroll'} >
+                {category.map((category) => (
+                  <MenuItem key={category.slug}><Link to={`/category/${category.slug}`} >{category.name}</Link></MenuItem>
+                ))}
+              </MenuList>
+            </Menu>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
               <CartWidget />
