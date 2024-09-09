@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-
 export const ItemListContainer = ({ products }) => {
   return (
     <Box display={"flex"} flexWrap={"wrap"}>
@@ -35,10 +34,7 @@ export const ItemListContainer = ({ products }) => {
           <Divider />
           <CardFooter>
             <ButtonGroup spacing="2">
-              {/* <Button variant="ghost" colorScheme="blue">
-                Add to cart
-              </Button> */}
-              <Link to={`/item/${product.id}`}>Ir a Detalle</Link>
+              <Link to={`/item/${product.id}`}> Producto detallado </Link>
             </ButtonGroup>
           </CardFooter>
         </Card>

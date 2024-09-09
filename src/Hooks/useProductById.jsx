@@ -11,10 +11,12 @@ export const useProductById = (id) => {
         setProduct(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
-  return { product, loading};
+  return { product, loading };
 };

@@ -11,10 +11,10 @@ export const useProducts = () => {
         setProducts(response.data.products);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       })
       .finally(() => setLoading(false));
   }, []);
 
-  return { products, loading};
+  return { products, loading };
 };

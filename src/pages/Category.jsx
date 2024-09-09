@@ -1,14 +1,12 @@
-import React from 'react';
-import { useParams } from 'react-router';
-import { ItemListContainer } from '../components';
-import { useProductsByCategory } from '../Hooks';
-
+import React from "react";
+import { useParams } from "react-router";
+import { ItemListContainer } from "../components";
+import { useProductsByCategory } from "../Hooks";
 
 export const Category = () => {
-    const { Categoryid } = useParams();
+  const { categoryId } = useParams();
 
-    const {products} = useProductsByCategory(Categoryid)
+  const { products } = useProductsByCategory(categoryId);
 
-    
-  return <ItemListContainer products={[products]} />;
+  return <ItemListContainer products={products} />;
 };
