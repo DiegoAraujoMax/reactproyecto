@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router";
 import { useProductById } from "../Hooks";
 import { ItemDetailContainer } from "../components";
+
 export const Item = () => {
   const { id } = useParams();
 
