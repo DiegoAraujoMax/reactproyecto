@@ -9,8 +9,8 @@ import {
   ButtonGroup,
   Image,
   Text,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+} from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 export const ItemListContainer = ({ products }) => {
   return (

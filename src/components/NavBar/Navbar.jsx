@@ -12,12 +12,12 @@ import {
   Stack,
   useColorMode,
   Center,
-} from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { CartWidget } from "../CartWidget";
-import { Link } from "react-router-dom";
-import FotoPerfil from "../../assets/img/perfil.jpg";
-import { useCategory } from "../../Hooks";
+} from '@chakra-ui/react';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { CartWidget } from '../CartWidget';
+import { Link } from 'react-router-dom';
+import FotoPerfil from '../../assets/img/perfil.jpg';
+import { useCategory } from '../../Hooks';
 
 export const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -35,7 +35,7 @@ export const Navbar = () => {
             <MenuButton as={Link} cursor="pointer" style={{ marginLeft: 30 }}>
               Categorías
             </MenuButton>
-            <MenuList maxHeight={"300px"} overflowY={"scroll"}>
+            <MenuList height={"300px"} overflowY={"scroll"}>
               {category.map((option) => (
                 <MenuItem key={option.slug}>
                   <Link to={`/category/${option.slug}`}>{option.name}</Link>

@@ -1,5 +1,5 @@
-import React from "react";
-import { getProductById } from "../services/products.service";
+import React from 'react';
+import { getProductById } from '../services/products.service';
 
 export const useProductById = (id) => {
   const [product, setProduct] = React.useState({});
