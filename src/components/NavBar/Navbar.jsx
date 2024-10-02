@@ -18,6 +18,7 @@ import { CartWidget } from '../CartWidget';
 import { Link } from 'react-router-dom';
 import FotoPerfil from '../../assets/img/perfil.jpg';
 import { useCategory } from '../../Hooks';
+import { createProductsFirestore } from '../../helpers';
 
 export const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -43,6 +44,7 @@ export const Navbar = () => {
               ))}
             </MenuList>
           </Menu>
+          <Button onClick={() =>createProductsFirestore('products')}>Crear Productos</Button>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
               <CartWidget />
