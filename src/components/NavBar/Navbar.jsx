@@ -17,13 +17,11 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { CartWidget } from '../CartWidget';
 import { Link } from 'react-router-dom';
 import FotoPerfil from '../../assets/img/perfil.jpg';
-import { useCategory } from '../../Hooks';
-import { createProductsFirestore } from '../../helpers';
-
+import { useItemsCollection } from '../../Hooks/useItemsCollection';
 export const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const { category } = useCategory();
+  const { items } = useItemsCollection('categories');
 
   return (
     <>
@@ -36,15 +34,14 @@ export const Navbar = () => {
             <MenuButton as={Link} cursor="pointer" style={{ marginLeft: 30 }}>
               Categorías
             </MenuButton>
-            <MenuList height={"300px"} overflowY={"scroll"}>
-              {category.map((option) => (
+            <MenuList height={"fit-content"} overflowY={"scroll"}>
+              {items.map((option) => (
                 <MenuItem key={option.slug}>
                   <Link to={`/category/${option.slug}`}>{option.name}</Link>
                 </MenuItem>
               ))}
             </MenuList>
           </Menu>
-          <Button onClick={() =>createProductsFirestore('products')}>Crear Productos</Button>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
               <CartWidget />

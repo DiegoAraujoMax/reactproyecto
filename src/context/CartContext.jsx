@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 
+
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -35,12 +36,16 @@ export const CartProvider = ({ children }) => {
               : item
           )
         );
-      }
+      } 
     }
   };
 
+  const deleteItem = (product) => {
+    setCartState(cartState.filter((item) => item.id !== product.id));
+  };
+
   return (
-    <CartContext.Provider value={{ cartState, addItem, removeItem }}>
+    <CartContext.Provider value={{ cartState, addItem, removeItem, deleteItem }}>
       {children}
     </CartContext.Provider>
   );
