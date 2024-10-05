@@ -11,9 +11,7 @@ export const useItemsCollection = (categoryName) => {
     const itemsCollection = collection(db, categoryName);
     getDocs(itemsCollection)
       .then((snapshot) => {
-        setItems(
-          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
+        setItems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       })
       .catch((error) => setError(true))
       .finally(() => setLoading(false));

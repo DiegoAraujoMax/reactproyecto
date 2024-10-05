@@ -19,6 +19,7 @@ export const CartWidget = () => {
       <HiShoppingCart size={25} />
       <Link to="/checkout">
         <Text fontSize={"1.5rem"}>{qtyTotalItems}</Text>
-      </Link>    </Flex>
+      </Link>{" "}
+    </Flex>
   );
 };

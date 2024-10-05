@@ -13,7 +13,9 @@ export const useProductsByCategory = (id) => {
     );
     getDocs(customeQuery)
       .then((snapshot) => {
-        setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
       })
       .catch((error) => setError(true))
       .finally(() => setLoading(false));

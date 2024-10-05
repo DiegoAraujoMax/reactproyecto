@@ -1,8 +1,8 @@
-import React from 'react';
-import { useParams } from 'react-router';
-import { useProductById } from '../Hooks';
-import { ItemDetailContainer } from '../components';
-import { Spinner } from '@chakra-ui/react';
+import React from "react";
+import { useParams } from "react-router";
+import { useProductById } from "../Hooks";
+import { ItemDetailContainer } from "../components";
+import { Spinner } from "@chakra-ui/react";
 
 export const Item = () => {
   const { id } = useParams();

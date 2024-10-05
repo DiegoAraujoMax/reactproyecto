@@ -9,10 +9,10 @@ export const Payment = () => {
   const [email, setEmail] = useState("");
 
   const { cartState } = useContext(CartContext);
-    const total = cartState.reduce(
+  const total = cartState.reduce(
     (acc, item) => acc + item.price * item.qtyItem,
     0
-    );
+  );
   const handleCreateOrder = () => {
     const orderObj = {
       buyer: {

@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { DeleteIcon, AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
-import { db } from '../../firebase/config';
+import { db } from "../../firebase/config";
 import { collection, addDoc } from "firebase/firestore";
 export const CartDetails = () => {
   const { cartState, addItem, removeItem, deleteItem } =
@@ -28,24 +28,23 @@ export const CartDetails = () => {
   );
 
   const handleCreateOrder = () => {
-    const orderObj ={
+    const orderObj = {
       item: cartState.map((item) => {
         return {
           id: item.id,
-        title: item.title,
-        price: item.price,
-        quantity: item.qtyItem,
-        }
-    }),
-    total: total
+          title: item.title,
+          price: item.price,
+          quantity: item.qtyItem,
+        };
+      }),
+      total: total,
     };
 
-    const ordersCollection = collection( db, 'orders');
-    addDoc(ordersCollection, orderObj).then(({ id} ) => {
-      alert('Se confirmo el pago con id: ' + id);
+    const ordersCollection = collection(db, "orders");
+    addDoc(ordersCollection, orderObj).then(({ id }) => {
+      alert("Se confirmo el pago con id: " + id);
     });
-  }
-
+  };
 
   const handleDeleteItem = (item) => {
     deleteItem(item);

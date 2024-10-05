@@ -1,8 +1,8 @@
-import React from 'react';
-import { useParams } from 'react-router';
-import { ItemListContainer } from '../components';
-import { useProductsByCategory } from '../Hooks';
-import { Spinner } from '@chakra-ui/react';
+import React from "react";
+import { useParams } from "react-router";
+import { ItemListContainer } from "../components";
+import { useProductsByCategory } from "../Hooks";
+import { Spinner } from "@chakra-ui/react";
 
 export const Category = () => {
   const { categoryId } = useParams();

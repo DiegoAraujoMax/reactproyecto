@@ -12,16 +12,16 @@ import {
   Stack,
   useColorMode,
   Center,
-} from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { CartWidget } from '../CartWidget';
-import { Link } from 'react-router-dom';
-import FotoPerfil from '../../assets/img/perfil.jpg';
-import { useItemsCollection } from '../../Hooks/useItemsCollection';
+} from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { CartWidget } from "../CartWidget";
+import { Link } from "react-router-dom";
+import FotoPerfil from "../../assets/img/perfil.jpg";
+import { useItemsCollection } from "../../Hooks/useItemsCollection";
 export const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const { items } = useItemsCollection('categories');
+  const { items } = useItemsCollection("categories");
 
   return (
     <>

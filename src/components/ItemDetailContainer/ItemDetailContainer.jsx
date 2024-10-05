@@ -14,7 +14,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from "../../context/CartContext";
 //import { Skeleton } from '../SkeletonItem';
 
 export const ItemDetailContainer = ({ product }) => {
@@ -33,7 +33,6 @@ export const ItemDetailContainer = ({ product }) => {
       addItem(product, newCount);
     }
   };
-
 
   const handleDecrement = () => {
     if (count > 0) {
